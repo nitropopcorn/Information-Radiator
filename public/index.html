@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TW Chennai Dashboard</title>
+    <link type="text/css" rel="stylesheet" media="screen" href="/stylesheets/scaffold.css?1314429412">
+    <script src="javascripts/jquery.js" language=""></script>
+    <script type="text/javascript">
+    
+      $(document).ready(function(){
+        
+        var iframe = $('iframe')[0];
+        var height = Math.max(
+          Math.max(document.body.scrollHeight, document.documentElement.scrollHeight), 
+          Math.max(document.body.offsetHeight, document.documentElement.offsetHeight), 
+          Math.max(document.body.clientHeight, document.documentElement.clientHeight)
+        );
+        iframe.height = height;
+        
+        var nextOnePlease = function(){
+          
+          $.ajax({
+            url:'news_items/random', 
+            dataType: 'json',
+            cache: false,
+            success: function(r){
+            
+              iframe.src = r.news_item.url.length > 0 ? r.news_item.url : '/news_items/' + r.news_item.id;
+              setTimeout(function(){
+                nextOnePlease();
+              }, r.news_item.time || 10000);
+            }
+          });
+        }
+        
+        nextOnePlease();
+        
+      });
+      
+    </script>
+  </head>
+  <body>
+    <iframe frameBorder="0" width="100%" height="100%">
+    </iframe>
+  </body>
+</html>

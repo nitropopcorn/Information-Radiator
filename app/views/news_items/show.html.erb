@@ -1,0 +1,19 @@
+<p id="notice" class="hide"><%= notice %></p>
+
+<table id="center_align_helper" margin=0 padding=0 cellpadding=0 cellspacing=0 width="100%">
+  <tr>
+    <td valign="middle">
+      <h1><%= @news_item.title %></h1>
+      <div id="description">
+        <%= @news_item.description %>
+      </div>
+    </td>
+    <% if @news_item.image.length > 0 %>
+      <td valign="middle" class="with_image">
+        <div id="image_container">
+          <img id="feature_image" src="/data/<%= @news_item.image %>" />
+        </div>
+      </td>
+    <% end %>
+  </td>
+</table>
