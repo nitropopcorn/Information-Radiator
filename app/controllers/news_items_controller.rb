@@ -58,6 +58,7 @@ class NewsItemsController < ApplicationController
   # PUT /news_items/1.xml
   def update
     @news_item = NewsItem.find(params[:id])
+    @news_item.image = params[:upload] ? NewsItem.save(params[:upload], @news_item.id) : ''
 
     respond_to do |format|
       if @news_item.update_attributes(params[:news_item])
