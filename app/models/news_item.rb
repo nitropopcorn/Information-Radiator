@@ -1,15 +1,15 @@
 class NewsItem < ActiveRecord::Base
-  
-  def self.save(upload, id)
-    
-    name = upload['datafile'].original_filename
-    directory = "public/data"
-    # create the file path
-    path = File.join(Rails.root, directory, name)
-    # write the file
-    File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
-    return name.to_s
-    
+
+  IMAGES_DIRECTORY = "public/data"
+
+  def save_image(data_file)
+    name = data_file.original_filename || ""
+    path = File.join(Rails.root, IMAGES_DIRECTORY, name)
+    File.open(path, "wb") { |f| f.write(data_file.read) }
+
+    File.delete(File.join(Rails.root, IMAGES_DIRECTORY, image)) if image && name != image
+    self.image = name
+    save
   end
   
 end

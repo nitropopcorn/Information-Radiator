@@ -3,11 +3,5 @@
 one:
   title: MyString
   description: MyString
-  image: MyString
-  url: MyString
-
-two:
-  title: MyString
-  description: MyString
-  image: MyString
+  image: "image.png"
   url: MyString

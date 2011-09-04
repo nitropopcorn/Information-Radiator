@@ -7,6 +7,8 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 gem 'sass'
+gem 'fakefs', :require => "fakefs/safe"
+gem 'test-unit'
 
 # Use unicorn as the web server
 # gem 'unicorn'
