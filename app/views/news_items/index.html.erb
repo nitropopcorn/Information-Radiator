@@ -1,6 +1,6 @@
 <h1>Listing News Items</h1>
 
-<table border=1 cellpadding=5 width="100%">
+<table border=1 cellpadding=5>
   <tr>
     <th>Title</th>
     <th>Description</th>
@@ -8,18 +8,20 @@
     <th>Url</th>
     <th>Time</th>
     <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @news_items.each do |news_item| %>
   <tr>
     <td><%= news_item.title %></td>
     <td><%= news_item.description %></td>
-    <td width="155px"><%= news_item.image.length > 0 ? ("<img src='/data/" + news_item.image + "' width=150 />").html_safe : "" %></td>
+    <td><%= news_item.image.length > 0 ? ("<img src='/data/" + news_item.image + "' width=150 />").html_safe : "" %></td>
     <td><%= news_item.url %></td>
     <td><%= news_item.time %></td>
-    <td><%= link_to 'Show', news_item %><br/>
-    <%= link_to 'Edit', edit_news_item_path(news_item) %><br/>
-    <%= link_to 'Destroy', news_item, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', news_item %></td>
+    <td><%= link_to 'Edit', edit_news_item_path(news_item) %></td>
+    <td><%= link_to 'Destroy', news_item, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
