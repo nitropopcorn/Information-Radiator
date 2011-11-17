@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20110827045558) do
     t.text     "description"
     t.string   "image"
     t.string   "url"
+    t.datetime "expiration_date"
     t.integer  "time"
     t.datetime "created_at"
     t.datetime "updated_at"

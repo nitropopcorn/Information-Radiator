@@ -5,6 +5,7 @@ class CreateNewsItems < ActiveRecord::Migration
       t.text :description
       t.string :image
       t.string :url
+	  t.datetime :expiration_date
       t.integer :time
 
       t.timestamps

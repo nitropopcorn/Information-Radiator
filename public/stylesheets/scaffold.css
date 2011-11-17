@@ -3,7 +3,7 @@ body {
   color: #f77825;
   padding: 0;
   margin: 0;
-  overflow: hidden; }
+  overflow: auto; }
 
 body, p, ol, ul, td {
   font-family: arial, helvetica, verdana, sans-serif;
