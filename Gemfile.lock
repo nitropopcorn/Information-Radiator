@@ -40,6 +40,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     pg (0.14.0)
+    pg (0.14.0-x86-mingw32)
     polyglot (0.3.2)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -67,7 +68,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.29)
+    tzinfo (0.3.61)
 
 PLATFORMS
   ruby
